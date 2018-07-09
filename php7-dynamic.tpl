@@ -1,4 +1,4 @@
-# copy directory /usr/local/vesta/data/templates/web/php7-fpm/
+# copy to directory /usr/local/vesta/data/templates/web/php7-fpm/
 
 [%backend%]
 listen = 127.0.0.1:%backend_port%
@@ -33,8 +33,6 @@ php_admin_flag[mysql.allow_persistent] = off
 php_admin_flag[safe_mode] = off
 php_admin_flag[enable_dl] = off
 php_admin_value[disable_functions] = passthru,pcntl_exec,popen,openlog,allow_url_fopen
-
-
 
 
 env[HOSTNAME] = $HOSTNAME
