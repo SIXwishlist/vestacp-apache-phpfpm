@@ -1,5 +1,6 @@
 
-#copy /usr/local/vesta/data/templates/web/apache2/php7-fpm.sh
+# copy /usr/local/vesta/data/templates/web/apache2/php7-fpm.sh
+# chmod +x /usr/local/vesta/data/templates/web/apache2/php7-fpm.sh
 
 user="$1"
 domain="$2"
@@ -26,7 +27,7 @@ if [ -d "/etc/php-fpm.d" ]; then
 ubic="$pool/$domain.conf"
 # Allocating backend port
 if [ ! -e "$ubic" ]; then
-#PHP-FPM 5 starts in 9000
+#PHP-FPM 7 starts in 9000
 backend_port=9000
 ports=$(grep -v '^;' $pool/* 2>/dev/null |grep listen |grep -o :[0-9].*)
 ports=$(echo "$ports" |sed "s/://" |sort -n)
